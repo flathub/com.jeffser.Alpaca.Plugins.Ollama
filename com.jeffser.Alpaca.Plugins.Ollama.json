@@ -15,15 +15,11 @@
 	    "build-commands": [
             	"cp -rf --remove-destination ./* ${FLATPAK_DEST}/"
             ],
-            "post-install": [
-		"rm ${FLATPAK_DEST}/com.jeffser.Alpaca.Plugins.Ollama.metainfo.xml",
-                "install -Dm0644 com.jeffser.Alpaca.Plugins.Ollama.metainfo.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml"
-            ],
             "sources": [
                 {
             		"type": "archive",
-            		"url": "https://github.com/ollama/ollama/releases/download/v0.5.13/ollama-linux-amd64.tgz",
-            		"sha256": "8d4e054bc512d53115074c19de5a7915df78180f89c014abbae4497e4a813a3c",
+            		"url": "https://github.com/ollama/ollama/releases/download/v0.6.0/ollama-linux-amd64.tgz",
+            		"sha256": "ffac427e4bd6515a6abde784b15e5411b1d75bf6253702758c5165d26b0e0f02",
 		    	"strip-components": 0,
 			"only-arches": [
 		    		"x86_64"
@@ -31,13 +27,22 @@
             	},
             	{
             		"type": "archive",
-            		"url": "https://github.com/ollama/ollama/releases/download/v0.5.13/ollama-linux-arm64.tgz",
-            		"sha256": "21c124617dee9ab4423c055cdc6ef1b0c7c9416bff27775f49959cbb0ecd27b2",
+            		"url": "https://github.com/ollama/ollama/releases/download/v0.6.0/ollama-linux-arm64.tgz",
+            		"sha256": "0d8c9bb35440963b0e2df4650cd1b2df85e2e4e220c3a1d791e01ddaf1589b3c",
 		    	"strip-components": 0,
 			"only-arches": [
 		    		"aarch64"
 		    	]
-            	},
+            	}
+            ]
+        },
+	{
+            "name": "metainfo",
+            "buildsystem": "simple",
+            "build-commands": [
+                "install -Dm0644 com.jeffser.Alpaca.Plugins.Ollama.metainfo.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml"
+            ],
+            "sources": [
                 {
                     "type": "file",
                     "path": "com.jeffser.Alpaca.Plugins.Ollama.metainfo.xml"
