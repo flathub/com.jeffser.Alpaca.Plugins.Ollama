@@ -15,10 +15,6 @@
 	    "build-commands": [
             	"cp -rf --remove-destination ./* ${FLATPAK_DEST}/"
             ],
-            "post-install": [
-		"rm ${FLATPAK_DEST}/com.jeffser.Alpaca.Plugins.Ollama.metainfo.xml",
-                "install -Dm0644 com.jeffser.Alpaca.Plugins.Ollama.metainfo.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml"
-            ],
             "sources": [
                 {
             		"type": "archive",
@@ -37,7 +33,16 @@
 			"only-arches": [
 		    		"aarch64"
 		    	]
-            	},
+            	}
+            ]
+        },
+	{
+            "name": "metainfo",
+            "buildsystem": "simple",
+            "build-commands": [
+                "install -Dm0644 com.jeffser.Alpaca.Plugins.Ollama.metainfo.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml"
+            ],
+            "sources": [
                 {
                     "type": "file",
                     "path": "com.jeffser.Alpaca.Plugins.Ollama.metainfo.xml"
