@@ -16,15 +16,15 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/ollama/ollama/releases/download/v0.13.0/ollama-linux-amd64.tgz",
-          "sha256": "c5e5b4840008d9c9bf955ec32c32b03afc57c986ac1c382d44c89c9f7dd2cc30",
+          "url": "https://github.com/ollama/ollama/releases/download/v0.13.1/ollama-linux-amd64.tgz",
+          "sha256": "4997753db0c578d24f8fc95d1538741609d72529ab6e913ecbf910ae919b0232",
           "strip-components": 0,
           "only-arches": ["x86_64"]
         },
         {
           "type": "archive",
-          "url": "https://github.com/ollama/ollama/releases/download/v0.13.0/ollama-linux-arm64.tgz",
-          "sha256": "b1747f3f9aefead61a918b49372028faa68dd0b9f141b7f25b05afb327a3551d",
+          "url": "https://github.com/ollama/ollama/releases/download/v0.13.1/ollama-linux-arm64.tgz",
+          "sha256": "3f2242c3b8e469d2a6fb5b50f14c2c6a9925392479fe213f12628f397d4b0c71",
           "strip-components": 0,
           "only-arches": ["aarch64"]
         }
